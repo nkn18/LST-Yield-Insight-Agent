@@ -56,7 +56,7 @@ import path from "path";
 import { fileURLToPath } from "url";
 import yargs from "yargs";
 import { MongoClient } from "mongodb";
-import { ScrapingService } from './services/ScrapingService';
+import { FetchDataService } from './services/fetchdataService';
 const __filename = fileURLToPath(import.meta.url); // get the resolved path to the file
 const __dirname = path.dirname(__filename); // get the name of the directory
 
@@ -1025,27 +1025,28 @@ async function startAgent(
             token
         );
         
-        // Initialize scraping service
-        const scrapingService = new ScrapingService();
+        // Initialize fetch data service
+        const fetchdataService = new FetchDataService();
 
         // Initial initialization
+        await fetchdataService.runFetchData();
         await runtime.initialize();
 
-        // Set up periodic reinitialization with scraping
-        const UPDATE_TIME = 3 * 60 * 1000;
+        // Set up periodic reinitialization with data fetching
+        const UPDATE_TIME = 10 * 60 * 1000;
         setInterval(async () => {
             try {
-                elizaLogger.info(`Starting scraping and reinitialization for ${character.name}...`);
+                elizaLogger.info(`Starting data fetching and reinitialization for ${character.name}...`);
                 
-                // Run scraping before reinitialization
-                await scrapingService.runScraping();
+                // Run data fetching before reinitialization
+                await fetchdataService.runFetchData();
                 
                 // Then reinitialize runtime
                 await runtime.initialize();
                 
-                elizaLogger.info(`Successfully completed scraping and reinitialization for ${character.name}`);
+                elizaLogger.info(`Successfully completed data fetching and reinitialization for ${character.name}`);
             } catch (error) {
-                elizaLogger.error(`Error in scraping/reinitialization for ${character.name}:`, error);
+                elizaLogger.error(`Error in data fetching/reinitialization for ${character.name}:`, error);
             }
         }, UPDATE_TIME);
 

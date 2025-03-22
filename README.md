@@ -1,15 +1,19 @@
-# Kaia Staking Insight Agent 🤖
+# LST Yield Insight Agent 🤖
 
 ## 🚩 Overview
 
-Kaia Staking Insight Agent is an AI-powered tool built on Eliza OS that provides insights for staking opportunities from selected staking platforms. Currently, it aggregates and analyzes staking data from three major staking providers to help users make informed decisions about their staking strategies.
+LST Yield Insight Agent is an AI-powered analytics expert built on Eliza OS that provides comprehensive data-driven insights for Liquid Staking Tokens (LSTs) and DeFi pools utilizing LSTs. The agent helps users make informed decisions about staking strategies and guides them toward advanced yield optimization techniques to maximize returns.
 
 ## ✨ Features
 
-- 🔍 Comprehensive Kaia chain staking analytics
-- 📊 Kaia validator information tracking
-- 💹 Up-to-date APR/APY data for Kaia staking
-- 💬 Natural language queries for Kaia staking data
+- 📊 Tracks APYs across 33+ LST pools with $27B+ in TVL
+- 🔄 Monitors 550+ DeFi pools utilizing LSTs with APRs 
+- 📈 Provides trend data with 1-day, 7-day, and 30-day APY movements
+- 🔮 Includes prediction confidence metrics for future yield stability
+- 🌐 Analyzes pools across Ethereum, Bifrost, BSC, Arbitrum and other chains
+- 💹 Compares yields across major LST providers including Lido, Rocket Pool, Bifrost,etc
+- 🛡️ Evaluates risk-adjusted returns for different LST yield strategies
+- 🚀 Identifies optimal yield stacking strategies combining LSTs with DeFi protocols
 
 ## 🚀 Quick Start
 
@@ -17,20 +21,12 @@ Kaia Staking Insight Agent is an AI-powered tool built on Eliza OS that provides
 
 - [Node.js 23+](https://docs.npmjs.com/downloading-and-installing-node-js-and-npm)
 - [pnpm](https://pnpm.io/installation)
-- For Puppeteer:
-    ```bash
-    # Install Chrome/Chromium
-    apt-get install -y chromium-browser
-
-    # Install other dependencies
-    apt-get install -y gconf-service libasound2 libatk1.0-0 libc6 libcairo2 libcups2 libdbus-1-3 libexpat1 libfontconfig1 libgcc1 libgconf-2-4 libgdk-pixbuf2.0-0 libglib2.0-0 libgtk-3-0 libnspr4 libpango-1.0-0 libpangocairo-1.0-0 libstdc++6 libx11-6 libx11-xcb1 libxcb1 libxcomposite1 libxcursor1 libxdamage1 libxext6 libxfixes3 libxi6 libxrandr2 libxrender1 libxss1 libxtst6 ca-certificates fonts-liberation libappindicator1 libnss3 lsb-release xdg-utils
-    ```
 
 ### Installation
 
 ```bash
-git clone https://github.com/nkn18/kaia-staking-insight-agent.git
-cd kaia-staking-insight-agent
+git clone https://github.com/nkn18/lst-yield-insight-agent.git
+cd lst-yield-insight-agent
 cp .env.example .env
 pnpm i && pnpm build && pnpm start
 ```
@@ -42,15 +38,14 @@ pnpm i && pnpm build && pnpm start
 cp .env.example .env
 ```
 
-2. Configure your character on `/characters/kaiastaking.character.json`
+2. Configure your character on `/characters/LST.character.json`
 
 ### Usage
 
 Start the agent:
 ```bash
-pnpm start --characters="/characters/kaiastaking.character.json`
+pnpm start --characters="/characters/LST.character.json"
 ```
-
 
 ## License
 
