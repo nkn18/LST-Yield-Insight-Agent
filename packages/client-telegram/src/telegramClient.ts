@@ -197,8 +197,13 @@ export class TelegramClient {
 
     public async stop(): Promise<void> {
         elizaLogger.log("Stopping Telegram bot...");
-        //await 
-            this.bot.stop();
-        elizaLogger.log("Telegram bot stopped");
+        try {
+            // Make sure we properly wait for the bot to stop
+            await this.bot.stop();
+            elizaLogger.log("Telegram bot stopped");
+        } catch (error) {
+            elizaLogger.error("Error stopping Telegram bot:", error);
+            // Even if there's an error, we should continue
+        }
     }
 }
