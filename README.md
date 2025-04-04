@@ -25,8 +25,8 @@ LST Yield Insight Agent is an AI-powered analytics expert built on Eliza OS that
 ### Installation
 
 ```bash
-git clone https://github.com/nkn18/lst-yield-insight-agent.git
-cd lst-yield-insight-agent
+git clone https://github.com/nkn18/LST-Yield-Insight-Agent.git
+cd LST-Yield-Insight-Agent
 cp .env.example .env
 pnpm i && pnpm build && pnpm start
 ```
